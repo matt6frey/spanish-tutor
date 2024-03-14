@@ -1,5 +1,5 @@
-from verbs.ar_verbs import ar_verbs as ar
-from verbs.ir_er_verbs import ir_er_verbs as ir_er
+from game_utils.verbs.ar_verbs import ar_verbs as ar
+from game_utils.verbs.ir_er_verbs import ir_er_verbs as ir_er
 from game_utils.functions import *
 import random
 
@@ -19,18 +19,25 @@ class Game:
     
     def play(self):
         while self.current_question != self.number_of_questions:
+            self.display_score(False)
             self.ask(self.questions[self.current_question])
             
             self.current_question += 1
         self.display_score()
     
-    def display_score(self):
-        print(f"You answered {self.correct_answers} out of a total {self.number_of_questions} questions, correct.\n")
+    def display_score(self, verbose=True):
+        if not verbose:
+            player_tab = f"{self.player.name.capitalize()}'s Score: {self.correct_answers}/{self.number_of_questions}"
+            divider = "="*len(player_tab)
+            print(player_tab)
+            print(f"{divider}\n")
+        else:
+            print(f"You answered {self.correct_answers} out of a total {self.number_of_questions} questions, correct.\n")
     
     def ask(self, word):
         self.answer = ''
         while self.answer == '':
-            self.answer = input(f"What does {word} mean in {self.language_to.capitalize()}?\n")
+            self.answer = input(f"Question> What does {word} mean in {self.language_to.capitalize()}?\nAnswer> ")
         expected = translate_word(word)
         if check_answer(self.answer, word):
             self.correct_answers += 1
