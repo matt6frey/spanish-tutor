@@ -23,10 +23,10 @@ My plan is to extend this further with some options including:
     - Personality
     - Moods/State
     - Physical Descriptions:
-           - Height
-           - Hair Color
-           - Beauty
-           - Skin Tone 
+        - Height
+        - Hair Color
+        - Beauty
+        - Skin Tone 
 
 ### Requirements
 
