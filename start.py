@@ -1,6 +1,6 @@
 from game_utils.functions import *
 from game_utils.player.Player import Player
-from game_utils.Game import Game
+from game_utils.game.Game import Game
 
 if __name__ == "__main__":
     # start game
