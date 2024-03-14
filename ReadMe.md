@@ -38,7 +38,7 @@ My plan is to extend this further with some options including:
 Simply clone the repo and run the command:
 
 ```bash
-$ python3 practice_spanish.py
+$ python3 start.py
 ```
 
 From there, you can enter your name & the desired amount of practice questions.
