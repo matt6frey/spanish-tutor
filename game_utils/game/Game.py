@@ -1,11 +1,12 @@
 from game_utils.verbs.ar_verbs import ar_verbs as ar
-from game_utils.verbs.ir_er_verbs import ir_er_verbs as ir_er
+from game_utils.verbs.er_verbs import er_verbs as er
+from game_utils.verbs.ir_verbs import ir_verbs as ir
 from game_utils.functions import *
 import random
 
 class Game:
     player = None
-    verbs = [*ar, *ir_er]
+    verbs = [*ar, *er, *ir]
     number_of_questions = 0
     current_question = 0
     correct_answers = 0
