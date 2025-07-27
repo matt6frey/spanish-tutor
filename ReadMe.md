@@ -31,7 +31,7 @@ My plan is to extend this further with some options including:
 ### Requirements
 
 - Python version 3.8^
-- Translator Ubuntu package, (Link coming soon)
+- [Translator Ubuntu package](https://github.com/soimort/translate-shell)
 
 ### Running the Program
 
