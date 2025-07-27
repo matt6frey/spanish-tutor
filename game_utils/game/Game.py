@@ -20,7 +20,7 @@ class Game:
     def play(self):
         while self.current_question != self.number_of_questions:
             self.display_score(False)
-            self.ask(self.questions[self.current_question])
+            self.ask(self.questions[self.current_question], self.current_question + 1)
             
             self.current_question += 1
         self.display_score()
@@ -34,10 +34,10 @@ class Game:
         else:
             print(f"You answered {self.correct_answers} out of a total {self.number_of_questions} questions, correct.\n")
     
-    def ask(self, word):
+    def ask(self, word, question_num):
         self.answer = ''
         while self.answer == '':
-            self.answer = input(f"Question> What does {word} mean in {self.language_to.capitalize()}?\nAnswer> ")
+            self.answer = input(f"Question {question_num}> What does {word} mean in {self.language_to.capitalize()}?\nAnswer> ")
         expected = translate_word(word)
         if check_answer(self.answer, word):
             self.correct_answers += 1
